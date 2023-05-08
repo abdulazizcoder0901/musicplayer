@@ -1,0 +1,394 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --backgroun: #111222;
+  --text-color: #fff;
+  --primary-color: #11fd19;
+  --second-color: #000;
+  --alpha-color: rgba(0, 0, 0, 0.5);
+  --shadow: 15px 48px var(var(--alpha-color));
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  position: relative;
+  max-width: 380px;
+  width: 100%;
+  height: 93vh;
+  background-color: var(--backgroun);
+  font-family: sans-serif;
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Home Section */
+.home-section {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-bottom: 100px;
+  overflow-y: auto;
+}
+
+/* /Home Section */
+
+/* Carousel Section */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.carousel img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: 1s;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* /Carousel Section */
+
+/* Heading Section */
+.heading {
+  margin: 25px 0 10px;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 25px;
+}
+
+/* /Heading Section */
+
+/* Playlist Card */
+.playlists-group {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  height: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.playlist-card {
+  flex: 0 0 auto;
+  max-width: 150px;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.playlist-card__img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.playlist-card__name {
+  width: 100%;
+  padding: 5px;
+  text-align: justify;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+/* /Playlist Card */
+
+/* Music Player Section */
+/* Minimize Section */
+.music-player__section {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 0;
+  left: 0;
+  background: var(--alpha-color);
+  backdrop-filter: blur(50px);
+  transition: 0.5s;
+}
+
+.music-seek__bar {
+  -webkit-appearance: none;
+  width: 100%;
+  position: absolute;
+  top: -4px;
+  height: 8px;
+  background: var(--second-color);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.music-seek__bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 5px;
+  background: var(--primary-color);
+  box-shadow: -400px 0 0 400px var(--primary-color);
+}
+
+.current-song__name {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.controls {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 25px;
+}
+
+.music-player__section.active #open-player{
+  display: none;
+}
+
+#open-player {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+
+.controls span {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+.music-player__section.active .controls {
+  justify-content: space-between;
+}
+
+.music-player__section.active .controls span {
+  font-size: 25px;
+  display: block;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.music-player__section.active .controls span.active {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.controls .main i {
+  margin: 0 5px;
+  display: none;
+  cursor: pointer;
+}
+
+.controls .main i.active {
+  display: inline-block;
+}
+
+/* /Minimize Section */
+
+.music-player__section .hide {
+  display: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.music-player__section.active .hide {
+  display: inline-block;
+  opacity: 1;
+}
+
+.music-player__section.active {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.music-player__section.active .music-seek__bar {
+  position: relative;
+  display: block;
+  border-radius: 50px;
+  margin: auto;
+}
+
+.music-player__section.active .current-song__name {
+  font-size: 25px;
+}
+
+.music-player__section.active .controls {
+  width: 100%;
+  font-size: 35px;
+}
+
+.artist-name {
+  text-align: center;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.cover {
+  height: 30vh;
+  object-fit: cover;
+  margin: auto;
+  box-shadow: var(--shadow);
+  border-radius: 20px;
+}
+
+.current-time {
+  position: absolute;
+  margin-top: 5px;
+  left: 30px;
+}
+
+.duration {
+  position: absolute;
+  margin-top: 5px;
+  right: 30px;
+}
+
+.icon {
+  position: absolute;
+  top: 60px;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.back-btn {
+  left: 40px;
+}
+
+.nav-btn {
+  right: 40px;
+}
+
+/* /Music Player Section */
+
+/* Volume Part*/
+.volume-slider {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: -35px;
+  bottom: 80px;
+  transform: rotate(-90deg);
+  border-radius: 20px;
+  background: var(--alpha-color);
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  display: none;
+}
+
+.volume-slider.active {
+  opacity: 1;
+  display: block;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 40px;
+  width: 10px;
+  background: var(--primary-color);
+  box-shadow: -200px 0 1px 200px var(--primary-color);
+}
+
+/* /Volume Part*/
+
+/* Playlist Section */
+.playlist {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -100%;
+  right: 0;
+  padding: 30px 0;
+  background: var(--backgroun);
+  z-index: 3;
+  transition: all .2s ease-in-out;
+  overflow: auto;
+  border: 1px solid #0a0b18;
+}
+
+.playlist.active {
+  top: 0;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 35px;
+  margin-top: 15px;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+
+.queue {
+  width: 100%;
+  height: 80px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid var(--alpha-color);
+}
+
+.queue-cover {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-right: 20px;
+  position: relative;
+}
+
+.queue-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.queue-cover i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: var(--primary-color);
+  display: none;
+}
+
+.queue.active i {
+  display: block;
+}
+
+.queue .name {
+  font-size: 19px;
+  text-transform: capitalize;
+}
+/* /Playlist Section */

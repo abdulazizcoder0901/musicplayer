@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="./box/images/cover 1.png">
+    <title>Music Player</title>
+</head>
+<body>
+    <audio src="" id="audio-source"></audio>
+    <!-- Home Section -->
+    <section class="home-section">
+        <!-- Carousel -->
+        <div class="carousel">
+            <img src="./box/images/cover 1.png" class="active" alt="Just Images">
+            <img src="./box/images/cover 2.png" alt="Just Images">
+            <img src="./box/images/cover 3.png" alt="Just Images">
+            <img src="./box/images/cover 4.png" alt="Just Images">
+            <img src="./box/images/cover 5.png" alt="Just Images">
+        </div>
+        <!-- /Carousel -->
+
+        <!-- Playlist -->
+         <h1 class="heading">
+            Recently Played
+        </h1>
+        <div class="playlists-group">
+            <div class="playlist-card">
+                <img src="./box/images/cover 1.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    top international
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 5.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    BTS collection
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 3.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    bollywood hits
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 8.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    top 50
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 2.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    justin biber
+                </p>
+            </div>
+        </div>
+        <h1 class="heading">
+            based on your listening
+        </h1>
+        <div class="playlists-group">
+            <div class="playlist-card">
+                <img src="./box/images/cover 11.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    top international
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 3.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    BTS collection
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 2.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    bollywood hits
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 9.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    top 50
+                </p>
+            </div>
+            <div class="playlist-card">
+                <img src="./box/images/cover 10.png" class="playlist-card__img" alt="Just Image">
+                <p class="playlist-card__name">
+                    justin biber
+                </p>
+            </div>
+        </div>
+        <!-- /Playlist -->
+    </section>
+    <!-- /Home Section -->
+
+    <!-- Music Player Section -->
+    <section class="music-player__section">
+        <img src="./box/images/back.png" class="back-btn icon hide" alt="Just Image">
+        <img src="./box/images/nav.png" class="nav-btn icon hide" alt="Just Image">
+        <h1 class="current-song__name">
+            Ey dostim tinglagin
+        </h1>
+        <p class="artist-name hide">
+            Doston Ergashev
+        </p>
+        <img src="./box/images/cover 1.png" class="cover hide" alt="Just Image">
+        <div class="seek-bar__container">
+            <input type="range" class="music-seek__bar" value="0">
+            <p class="current-time hide">00 : 00</p>
+            <p class="duration hide">00 : 00</p>
+        </div>
+        <div class="controls">
+            <i id="open-player" class="fa-solid fa-arrow-up-from-bracket fa-bounce"></i>
+            <span class="fas fa-redo"></span>
+            <div class="main">
+                <i class="fas fa-backward active"></i>
+                <i class="fas fa-play active"></i>
+                <i class="fas fa-pause"></i>
+                <i class="fas fa-forward active"></i>
+            </div>
+            <input type="range" class="volume-slider" max="1" value="1" step=".1">
+            <span class="fas fa-volume-up"></span>
+        </div>
+    </section>
+    <!-- /Music Player Section -->
+
+    <!-- Playlist Section -->
+    <section class="playlist">
+        <img src="./box/images/back.png" class="back-btn icon" alt="Just Image">
+        <h1 class="title">playlist</h1>
+        <div class="queue active">
+            <div class="queue-cover">
+                <img src="./box/images/cover 1.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Ketavering Yalinmayman</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 2.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Song 2</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 3.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">90-60</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 4.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Turkcha</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 5.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Kel</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 6.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Just Music</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 7.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Ogridi dil</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 8.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Yolgonchim</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 9.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Yor-Yor</p>
+        </div>
+        <div class="queue">
+            <div class="queue-cover">
+                <img src="./box/images/cover 10.png" alt="Just Image">
+                <i class="fas fa-pause"></i>
+            </div>
+            <p class="name">Just Music</p>
+        </div>
+    </section>
+    <!-- /Playlist Section -->
+
+    
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
